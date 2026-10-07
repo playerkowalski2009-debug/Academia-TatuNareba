@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Perfil | Biblioteca de Exercícios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+  <nav class="bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-bold text-orange-500">TATU NAREBA</a>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" type="button"
+                class="flex items-center gap-x-2 rounded-2xl border border-gray-200 bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700 transition-all hover:border-orange-500 hover:text-orange-500"
+                aria-pressed="false" aria-label="Alternar modo escuro">
+          <i id="theme-toggle-icon" class="fa-solid fa-moon"></i>
+          <span id="theme-toggle-text" class="hidden sm:inline">Modo escuro</span>
+        </button>
+        <a href="exercicios.html" class="text-sm font-semibold text-slate-600 hover:text-orange-500">Voltar aos exercícios</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-6 py-16">
+    <div class="mb-8">
+      <p class="text-orange-500 font-semibold uppercase tracking-[0.2em]">Minha conta</p>
+      <h1 class="mt-3 text-4xl font-bold">Seu perfil personalizado</h1>
+      <p class="mt-4 text-lg text-slate-600">Adicione sua foto, idade, peso e altura para ter um perfil mais completo dentro da biblioteca.</p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+      <section class="rounded-3xl bg-white p-8 shadow-sm border border-slate-200">
+        <form id="profile-form" class="space-y-6">
+          <div class="flex flex-col gap-6 md:flex-row md:items-start">
+            <label for="profile-photo" class="flex cursor-pointer flex-col items-center justify-center rounded-3xl border-2 border-dashed border-slate-300 bg-slate-50 px-6 py-8 text-center transition hover:border-orange-500 hover:bg-orange-50">
+              <img id="profile-photo-preview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='80' fill='%23f1f5f9'/%3E%3Ccircle cx='80' cy='68' r='32' fill='%23cbd5e1'/%3E%3Cpath d='M40 134c8-26 30-40 40-40s32 14 40 40' fill='%23cbd5e1'/%3E%3C/svg%3E" alt="Foto de perfil" class="mb-4 h-24 w-24 rounded-full object-cover" />
+              <span class="text-sm font-semibold text-slate-700">Adicionar foto</span>
+              <span class="mt-2 text-xs text-slate-500">PNG, JPG ou WEBP</span>
+              <input id="profile-photo" type="file" accept="image/*" class="sr-only" />
+            </label>
+
+            <div class="flex-1 space-y-4">
+              <div>
+                <label for="profile-email" class="mb-2 block text-sm font-semibold text-slate-700">E-mail da conta</label>
+                <input id="profile-email" type="email" class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3" disabled />
+              </div>
+
+              <div class="grid gap-4 md:grid-cols-3">
+                <div>
+                  <label for="profile-age" class="mb-2 block text-sm font-semibold text-slate-700">Idade</label>
+                  <input id="profile-age" type="number" min="1" max="120" class="w-full rounded-2xl border border-slate-300 px-4 py-3" placeholder="25" />
+                </div>
+                <div>
+                  <label for="profile-weight" class="mb-2 block text-sm font-semibold text-slate-700">Peso (kg)</label>
+                  <input id="profile-weight" type="number" min="1" step="0.1" class="w-full rounded-2xl border border-slate-300 px-4 py-3" placeholder="70" />
+                </div>
+                <div>
+                  <label for="profile-height" class="mb-2 block text-sm font-semibold text-slate-700">Altura (cm)</label>
+                  <input id="profile-height" type="number" min="1" step="0.1" class="w-full rounded-2xl border border-slate-300 px-4 py-3" placeholder="175" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <button type="submit" class="rounded-2xl bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600">
+              Salvar perfil
+            </button>
+            <p class="text-sm text-slate-500">As informações ficam salvas no seu navegador para a experiência demo.</p>
+          </div>
+
+          <div id="profile-message" class="hidden rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700"></div>
+        </form>
+      </section>
+
+      <aside class="rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white shadow-sm">
+        <div class="flex items-center gap-4">
+          <img id="profile-summary-photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='80' fill='%23f1f5f9'/%3E%3Ccircle cx='80' cy='68' r='32' fill='%23cbd5e1'/%3E%3Cpath d='M40 134c8-26 30-40 40-40s32 14 40 40' fill='%23cbd5e1'/%3E%3C/svg%3E" alt="Resumo do perfil" class="h-20 w-20 rounded-full object-cover border-4 border-white/30" />
+          <div>
+            <p id="profile-summary-name" class="text-xl font-semibold">Seu nome</p>
+            <p id="profile-summary-email" class="mt-1 text-sm text-slate-300">seu@email.com</p>
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+          <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
+            <p class="text-sm text-slate-300">Idade</p>
+            <p id="profile-summary-age" class="mt-2 text-xl font-semibold">—</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
+            <p class="text-sm text-slate-300">Peso</p>
+            <p id="profile-summary-weight" class="mt-2 text-xl font-semibold">—</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
+            <p class="text-sm text-slate-300">Altura</p>
+            <p id="profile-summary-height" class="mt-2 text-xl font-semibold">—</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="../js/script (1).js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

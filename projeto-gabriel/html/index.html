@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Exercícios TATU NAREBA • Conteúdo com Orientação</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-x-3">
+                    <img src="img/logo.png" alt="Logo TATU NAREBA" class="h-14 w-auto object-contain" />
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-8 text-lg">
+                    <a href="sobre.html" class="hover:text-orange-500 transition-colors">Sobre</a>
+                    <a href="#destaques" class="hover:text-orange-500 transition-colors">Destaques</a>
+                    <a href="#resultados" class="hover:text-orange-500 transition-colors">Resultados</a>
+                    <a href="#planos" class="hover:text-orange-500 transition-colors">Planos</a>
+                    <a href="#contato" class="hover:text-orange-500 transition-colors">Contato</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <button id="theme-toggle" type="button"
+                            class="flex items-center gap-x-2 rounded-2xl border border-gray-200 bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700 transition-all hover:border-orange-500 hover:text-orange-500"
+                            aria-pressed="false" aria-label="Alternar modo escuro">
+                        <i id="theme-toggle-icon" class="fa-solid fa-moon"></i>
+                        <span id="theme-toggle-text" class="hidden sm:inline">Modo escuro</span>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="pagamento.html" 
+                       class="hidden md:block px-6 py-3 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition-all">
+                        Acessar biblioteca
+                    </a>
+                    
+                    <!-- Hamburger Menu (Mobile) -->
+                    <button onclick="toggleMobileMenu()" 
+                            class="md:hidden w-11 h-11 flex items-center justify-center text-2xl text-gray-700 hover:text-orange-500 transition-colors">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t">
+            <div class="px-6 py-6 flex flex-col gap-y-4 text-lg">
+                <a href="#sobre" class="py-2 hover:text-orange-500 transition-colors">Sobre</a>
+                <a href="#destaques" class="py-2 hover:text-orange-500 transition-colors">Destaques</a>
+                <a href="#planos" class="py-2 hover:text-orange-500 transition-colors">Planos</a>
+                <a href="#contato" class="py-2 hover:text-orange-500 transition-colors">Contato</a>
+                
+                <a href="pagamento.html" 
+                   class="mt-4 block text-center px-6 py-3 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition-all">
+                    Acessar biblioteca
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-6 pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-x-2 bg-white/10 px-4 py-1.5 rounded-full mb-6">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span class="text-sm font-medium">Biblioteca online • Exercícios com orientação</span>
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
+                    Encontre o exercício certo<br>
+                    <span class="text-orange-400">para cada objetivo.</span>
+                </h1>
+                
+                <p class="text-2xl text-gray-300 mb-8 max-w-md">
+                    Explore uma coleção organizada de exercícios, com explicações claras e conteúdo pensado para estudo e prática.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#planos" 
+                       class="px-10 py-4 bg-orange-500 hover:bg-orange-600 transition-all text-xl font-semibold rounded-3xl flex items-center gap-x-3 botao-principal">
+                        <span>Explorar exercícios</span>
+                    </a>
+                    <a href="#sobre" 
+                       class="px-8 py-4 border-2 border-white hover:bg-white hover:text-gray-900 transition-all text-xl font-semibold rounded-3xl flex items-center gap-x-3">
+                        Conheça a biblioteca
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex items-center gap-x-8 text-sm">
+                    <div class="flex items-center gap-x-2">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 bg-orange-400 rounded-full border-2 border-white"></div>
+                            <div class="w-8 h-8 bg-green-400 rounded-full border-2 border-white"></div>
+                            <div class="w-8 h-8 bg-blue-400 rounded-full border-2 border-white"></div>
+                        </div>
+                        <span>+500 exercícios disponíveis</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Image -->
+            <div class="relative">
+                <img src="https://i.pinimg.com/736x/56/51/44/565144eb0b47e82812444038cee42c9f.jpg" 
+                     class="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3] md:aspect-auto" 
+                     alt="Alunos treinando na academia TATU NAREBA">
+                
+                <div class="absolute -bottom-6 -right-6 bg-white text-gray-900 p-6 rounded-3xl shadow-xl hidden md:block">
+                    <div class="flex items-center gap-x-4">
+                        <div>
+                            <div class="font-bold text-4xl">+500</div>
+                            <div class="text-sm -mt-1">exercícios disponíveis</div>
+                        </div>
+                        <div class="text-orange-500">
+                            <i class="fa-solid fa-play fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE / EQUIPE -->
+    <section id="sobre" class="max-w-7xl mx-auto px-6 py-20 secao">
+        <div class="text-center mb-12">
+            <span class="text-orange-500 font-semibold tracking-wider">CONHEÇA A BIBLIOTECA TATU NAREBA</span>
+            <h2 class="text-5xl font-bold tracking-tight mt-2">Nossa equipe de conteúdo</h2>
+            <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">Profissionais dedicados a organizar exercícios, orientações e materiais claros para quem quer aprender com mais segurança.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Team Member 1 -->
+            <div class="bg-white rounded-3xl p-6 text-center gym-card">
+                <img src="img/ygor.jpg" 
+                     class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-4 border-orange-100" alt="Carlos Silva">
+                <h4 class="font-bold text-xl">Ygor Lelis Dias</h4>
+                <p class="text-orange-500 font-semibold">Especialista em execução</p>
+                <p class="text-sm text-gray-600 mt-3">Orienta com clareza sobre postura, técnica e aplicação dos exercícios.</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl p-6 text-center gym-card">
+                <img src="img/g_kovalski.png" 
+                     class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-4 border-orange-100" alt="Ana Costa">
+                <h4 class="font-bold text-xl">Gabriel Kovalski Becker</h4>
+                <p class="text-orange-500 font-semibold">Organização de conteúdo</p>
+                <p class="text-sm text-gray-600 mt-3">Cuida da estrutura das categorias para facilitar a busca e o estudo.</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl p-6 text-center gym-card">
+                <img src="img/gabrielh.png" 
+                     class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-4 border-orange-100" alt="Luan Oliveira">
+                <h4 class="font-bold text-xl">Gabriel Henrique</h4>
+                <p class="text-orange-500 font-semibold">Curadoria de práticas</p>
+                <p class="text-sm text-gray-600 mt-3">Seleciona exercícios e sugestões para diferentes objetivos e níveis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTAQUES -->
+    <section id="destaques" class="bg-white py-20 secao">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-orange-500 font-semibold tracking-wider">POR QUE USAR A BIBLIOTECA?</span>
+                <h2 class="text-5xl font-bold tracking-tight mt-2">Nossos destaques</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-8 rounded-3xl gym-card">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-dumbbell text-3xl text-orange-500"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-3">Exercícios Organizados</h3>
+                    <p class="text-gray-600">Conteúdo separado por foco, dificuldade e objetivo para facilitar a escolha do exercício ideal.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-3xl gym-card">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-users text-3xl text-orange-500"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-3">Conteúdo Claro</h3>
+                    <p class="text-gray-600">Explicações objetivas para que você entenda a proposta de cada exercício com mais facilidade.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-3xl gym-card">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-heart-pulse text-3xl text-orange-500"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-3">Prática com Segurança</h3>
+                    <p class="text-gray-600">Orientações pensadas para você estudar, revisar e aplicar cada exercício com mais confiança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resultados" class="bg-gray-900 text-white py-20 secao">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-orange-400 font-semibold tracking-wider">RESULTADOS</span>
+                <h2 class="text-5xl font-bold tracking-tight mt-2">O que nossos alunos dizem</h2>
+                <p class="mt-4 text-xl text-gray-400">
+                    Confira as transformações e opiniões de quem já alcançou seus objetivos com nosso suporte.
+                </p>
+            </div>
+    
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    
+                <div class="bg-gray-800 p-8 rounded-3xl gym-card">
+                    <div class="text-center">
+                        <img src="https://i.pinimg.com/736x/55/7c/d0/557cd09305c9b01fb8e4a8a91e99ce38.jpg" alt="Aluno 1" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h3 class="font-bold text-2xl mb-2">Joana da Silva</h3>
+                        <p class="text-gray-400 italic">"O site me ajudou a criar uma rotina de treinos eficiente e alcançar meus objetivos."</p>
+                    </div>
+                </div>
+    
+                <div class="bg-gray-800 p-8 rounded-3xl gym-card">
+                    <div class="text-center">
+                        <img src="https://i.pinimg.com/736x/cc/ea/e6/cceae679f5d62fa35f11d391d81a75d0.jpg" alt="Aluna 2" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h3 class="font-bold text-2xl mb-2">Maria Oliveira</h3>
+                        <p class="text-gray-400 italic">"Com as dicas e treinos, consegui melhorar minha saúde e disposição."</p>
+                    </div>
+                </div>
+    
+                <div class="bg-gray-800 p-8 rounded-3xl gym-card">
+                    <div class="text-center">
+                        <img src="https://i.pinimg.com/736x/d1/45/92/d145929a723ba1b335f47bf3c380cef4.jpg" alt="Aluno 3" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h3 class="font-bold text-2xl mb-2">Carol da Nero Azul</h3>
+                        <p class="text-gray-400 italic">"A plataforma é incrível! Me ajudou a atingir minha melhor forma física."</p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    <!-- PLANOS -->
+    <section id="planos" class="bg-gray-900 text-white py-20 secao">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-orange-400 font-semibold tracking-wider">ESCOLHA SEU ACESSO</span>
+                <h2 class="text-5xl font-bold tracking-tight mt-2">Aprenda a executar os exercícios corretamente</h2>
+                <p class="mt-4 text-xl text-gray-400">
+                    Tenha acesso a conteúdos organizados, explicações práticas e novidades semanais.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <!-- Plano Básico -->
+                <div class="bg-white text-gray-900 rounded-3xl p-8 gym-card">
+                    <div class="text-center">
+                        <div class="font-bold text-2xl">Básico</div>
+                        <div class="mt-4">
+                            <span class="text-6xl font-bold">R$ 4,90</span>
+                            <span class="text-gray-500">/mês</span>
+                        </div>
+                    </div>
+
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li><i class="fa-solid fa-check text-green-500"></i> Exercícios básicos com explicação</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> Orientação simples sobre execução</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> Acesso pelo celular e computador</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> Atualizações mensais</li>
+                    </ul>
+
+                    <button onclick="window.authFlow.handleSubscribeClick('Básico')"
+                        class="mt-8 w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-2xl">
+                        Assinar
+                    </button>
+                </div>
+
+                <!-- Plano Plus -->
+                <div class="bg-white text-gray-900 rounded-3xl p-8 plano-destaque cartao-conteudo">
+                    <div class="text-center">
+                        <div class="font-bold text-2xl">Plus</div>
+                        <div class="mt-4">
+                            <span class="text-6xl font-bold">R$ 9,90</span>
+                            <span class="text-gray-500">/mês</span>
+                        </div>
+                    </div>
+
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li><i class="fa-solid fa-check text-green-500"></i> Tudo do plano Básico</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> Biblioteca completa de exercícios</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> Dicas de postura e execução</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> Novos exercícios toda semana</li>
+                    </ul>
+
+                    <button onclick="window.authFlow.handleSubscribeClick('Plus')"
+                        class="mt-8 w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-2xl">
+                        Assinar
+                    </button>
+                </div>
+
+                <!-- Plano Premium -->
+                <div class="bg-white text-gray-900 rounded-3xl p-8 gym-card">
+                    <div class="text-center">
+                        <div class="font-bold text-2xl">Premium</div>
+                        <div class="mt-4">
+                            <span class="text-6xl font-bold">R$ 14,90</span>
+                            <span class="text-gray-500">/mês</span>
+                        </div>
+                    </div>
+
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li><i class="fa-solid fa-check text-green-500"></i> Tudo do plano Plus</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> Exercícios separados por foco corporal</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> Conteúdo exclusivo</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> Acesso antecipado às novidades</li>
+                    </ul>
+
+                    <button onclick="window.authFlow.handleSubscribeClick('Premium')"
+                        class="mt-8 w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-2xl">
+                        Assinar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="max-w-7xl mx-auto px-6 py-20 secao">
+        <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
+            <!-- Info -->
+            <div>
+                <span class="text-orange-500 font-semibold tracking-wider">VEM EXPLORAR COM A GENTE</span>
+                <h2 class="text-5xl font-bold tracking-tight mt-2">Venha conhecer a biblioteca TATU NAREBA</h2>
+                <p class="mt-4 text-xl text-gray-600">Estamos ansiosos para te apresentar o conteúdo que preparamos para você estudar e praticar com mais confiança.</p>
+                
+                <div class="mt-10 space-y-5 text-lg">
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-phone text-orange-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm text-gray-500">Telefone / WhatsApp</div>
+                            <div class="font-semibold">+55 44 99132-7527</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-envelope text-orange-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm text-gray-500">E-mail</div>
+                            <div class="font-semibold">gabriel.andrade18@escola.pr.gov.br</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-location-dot text-orange-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm text-gray-500">Endereço</div>
+                            <div class="font-semibold">Rua Gamba, 888 - Cruzeiro do Oeste, PR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Form -->
+            <div class="bg-white p-8 md:p-10 rounded-3xl shadow">
+                <h3 class="font-bold text-2xl mb-6">Fale conosco</h3>
+                
+                <form onsubmit="handleFormSubmit(event)">
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5 text-gray-700">Nome completo</label>
+                            <input type="text" required 
+                                   class="w-full border border-gray-300 rounded-2xl px-5 py-3.5 text-lg" 
+                                   placeholder="Seu nome completo">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium mb-1.5 text-gray-700">Telefone / WhatsApp</label>
+                                <input type="tel" required 
+                                       class="w-full border border-gray-300 rounded-2xl px-5 py-3.5 text-lg" 
+                                       placeholder="(11) 99999-9999">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1.5 text-gray-700">E-mail</label>
+                                <input type="email" required 
+                                       class="w-full border border-gray-300 rounded-2xl px-5 py-3.5 text-lg" 
+                                       placeholder="seu@email.com">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5 text-gray-700">Mensagem</label>
+                            <textarea required rows="4" 
+                                      class="w-full border border-gray-300 rounded-2xl px-5 py-3.5 text-lg resize-y min-h-[120px]"
+                                      placeholder="Olá! Gostaria de saber mais sobre os acessos da biblioteca..."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white text-lg font-bold rounded-2xl transition-all flex items-center justify-center gap-x-2">
+                            <span>Enviar mensagem</span>
+                        </button>
+                        
+                        <p class="text-center text-xs text-gray-500">Respondemos em até 24 horas úteis</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-y-6">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-orange-500 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-dumbbell text-white"></i>
+                    </div>
+                    <span class="font-bold text-white text-xl">TATU NAREBA</span>
+                </div>
+                
+                <div class="text-sm text-center md:text-left">
+                    © 2026 TATU NAREBA. Todos os direitos reservados.<br class="md:hidden">
+                    <span class="hidden md:inline"> • </span> 
+                    Feito com carinho para você estudar, praticar e evoluir.
+                </div>
+                
+                <div class="flex gap-x-5 text-xl">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/script (1).js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

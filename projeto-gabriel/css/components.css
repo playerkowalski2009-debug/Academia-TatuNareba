@@ -1,0 +1,53 @@
+/* ==========================================================
+   COMPONENTS.CSS
+   Estilos de navegação, menus mobile, formulários e destaques
+   ========================================================== */
+
+/* Navbar */
+.nav-active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+  display: none;
+}
+
+#mobile-menu.show {
+  display: block;
+}
+
+/* Formulários */
+input,
+textarea,
+select {
+  transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+/* Destaque de planos */
+.plano-destaque {
+  border: 4px solid var(--primary);
+  position: relative;
+}
+
+.plano-destaque::before {
+  content: "MAIS ESCOLHIDO";
+  position: absolute;
+  top: -14px;
+  right: 24px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 9999px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Biblioteca de Exercícios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+  <nav class="bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-bold text-orange-500">TATU NAREBA</a>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" type="button"
+                class="flex items-center gap-x-2 rounded-2xl border border-gray-200 bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700 transition-all hover:border-orange-500 hover:text-orange-500"
+                aria-pressed="false" aria-label="Alternar modo escuro">
+          <i id="theme-toggle-icon" class="fa-solid fa-moon"></i>
+          <span id="theme-toggle-text" class="hidden sm:inline">Modo escuro</span>
+        </button>
+        <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-orange-500">Voltar ao início</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+      <div>
+        <p class="text-orange-500 font-semibold uppercase tracking-[0.2em]">Acesso para assinantes</p>
+        <h1 class="mt-4 text-4xl md:text-5xl font-bold leading-tight">Entre para continuar e liberar sua biblioteca.</h1>
+        <p class="mt-5 text-lg text-slate-600">Faça login para concluir a assinatura e acessar os exercícios com orientação.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-xl p-8">
+        <h2 class="text-2xl font-bold">Entrar na conta</h2>
+        <form id="login-form" class="mt-6 space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-slate-700" for="email">E-mail</label>
+            <input id="email" name="email" type="email" required class="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3" placeholder="seu@email.com" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-slate-700" for="password">Senha</label>
+            <input id="password" name="password" type="password" required class="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3" placeholder="Sua senha" />
+          </div>
+
+          <button type="submit" class="w-full rounded-2xl bg-orange-500 px-4 py-3 font-semibold text-white hover:bg-orange-600">Entrar</button>
+        </form>
+
+        <div id="message-box" class="mt-4 hidden"></div>
+
+        <p class="mt-6 text-sm text-slate-600">
+          Ainda não possui conta?
+          <a href="cadastro.html" class="ml-1 font-semibold text-orange-500 hover:text-orange-600">Criar conta</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/script (1).js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

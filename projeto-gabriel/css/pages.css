@@ -1,0 +1,38 @@
+/* ==========================================================
+   PAGES.CSS
+   Estilos específicos de páginas e seções principais
+   ========================================================== */
+
+/* Hero e seções principais */
+.hero-section {
+  position: relative;
+}
+
+.section {
+  scroll-margin-top: 80px;
+}
+
+/* Estilos de cards de exercícios */
+.exercise-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.exercise-card img {
+  height: 11rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.exercise-card .content {
+  padding: 1.25rem;
+}
+
+/* Página de pagamento */
+.cartao-pagamento,
+.resumo-pagamento {
+  border: 1px solid rgba(255, 107, 53, 0.18);
+}
